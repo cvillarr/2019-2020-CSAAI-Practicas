@@ -1,8 +1,11 @@
 body {
- background-image: url("fondo_cv.jpg");
+ background-image: url("fondo_cv3.jpg");
+ background-repeat: no-repeat;
  font-family: "Gill Sans", sans-serif;
-
+ position: relative;
+ text-align: center;
 }
+
 h1 {
  color: blue;
  position: relative;
@@ -10,9 +13,26 @@ h1 {
  text-decoration: underline;
  text-decoration-color: blue;
 }
+
+h2{
+  position: relative;
+  text-align: center;
+  text-decoration: underline;
+}
+
 ul {
   font-size: 16px;
 }
+table{
+  position: relative;
+  text-align: center;
+}
+td{
+  position: relative;
+  text-align: right;
+}
+
 p {
- font-size: 19px;
+ font-size: 22px;
+ text-decoration: underline;
 }
