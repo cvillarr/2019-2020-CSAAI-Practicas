@@ -1,0 +1,13 @@
+body {
+  padding: 10px;
+  border: solid;
+  margin: 10px;
+  border-color: pink;
+}
+
+p{
+  padding: 10px;
+  border: solid;
+  margin: 3px;
+  border-color: blue;
+}
