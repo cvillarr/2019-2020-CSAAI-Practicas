@@ -13,7 +13,9 @@ const ctx = canvas.getContext("2d");
 let bola_x = 50;
 let bola_vx = 0;
 
+//pintar todos los objetos del canvas
 function draw() {
+
       //----- Dibujar la Bola
       ctx.beginPath();
       ctx.fillStyle='red';
@@ -60,6 +62,14 @@ function draw() {
 
 function animacion(){
 
+  //-- Comprobar si la bola ha alcanzado el límite derecho
+//-- Si es así, se cambia de signo la velocidad, para
+// que "rebote" y vaya en el sentido opuesto
+    if (bola_x >= canvas.width) {
+      //-- Hay colisión. Cambiar el signo de la bola
+      bola_vx = bola_vx * -1;
+    }
+
     //-- Actualizar las posiciones de los objetos móviles
     //-- Actualizar coordenada x de la bola
     bola_x += bola_vx;
@@ -89,7 +99,7 @@ const sacar = document.getElementById("sacar");
 //-- También restablecemos la posicion inicial
 sacar.onclick = () => {
   bola_x = 50;
-  bola_vx = 3;
+  bola_vx = 6;
   console.log("Saque!");
 }
 
