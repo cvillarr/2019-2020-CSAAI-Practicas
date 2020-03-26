@@ -53,17 +53,25 @@ function animacion() {
   raqI.update();
   raqD.update();
 
+  //////////// COMENTADO PARA QUE CUANDO DE EN LA PARED DE LA DERECHA NO REBOTE
+  /////////// SI NO QUE SE VAYA LA BOLA COMO SI HUBIERAS METIDO GOL
   //-- Comprobar si la bola ha alcanzado el límite derecho
   //-- Si es así, se cambia de signo la velocidad, para
   // que "rebote" y vaya en el sentido opuesto
-  if (bola.x >= canvas.width) {
+  //if (bola.x >= canvas.width) {
     //-- Hay colisión. Cambiar el signo de la bola
-    bola.vx = bola.vx * -1;
-  }
+    //bola.vx = bola.vx * -1;
+  //}
 
   //-- Comprobar si hay colisión con la raqueta izquierda
   if (bola.x >= raqI.x && bola.x <=(raqI.x + raqI.width) &&
       bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)) {
+    bola.vx = bola.vx * -1;
+  }
+
+  //-- Comprobar si hay colisión con la raqueta derecha
+  if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
+      bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
     bola.vx = bola.vx * -1;
   }
 
