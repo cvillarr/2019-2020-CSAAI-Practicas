@@ -10,6 +10,9 @@ console.log(`canvas: Anchura: ${canvas.width}, Altura: ${canvas.height}`);
 //-- Obtener el contexto para pintar en el canvas
 const ctx = canvas.getContext("2d");
 
+//-- Obtener Sonidos
+const sonido_raqueta = new Audio("pong-raqueta.mp3");
+const sonido_rebote = new Audio("pong-rebote.mp3");
 
 //-- Pintar todos los objetos en el canvas
 function draw() {
@@ -17,11 +20,11 @@ function draw() {
   //----- Dibujar la Bola
   bola.draw();
 
-  //-- Dibunar la raqueta izquierda
+  //-- Dibujar las raquetas
   raqI.draw();
   raqD.draw();
 
-  //------- Dibujar la red
+  //--------- Dibujar la red
   ctx.beginPath();
 
   //-- Estilo de la linea: discontinua
@@ -38,14 +41,15 @@ function draw() {
   ctx.stroke();
 
   //------ Dibujar el tanteo
-  ctx.font = "100px Comic";
+  ctx.font = "100px comic";
   ctx.fillStyle = "#FDFD96";
   ctx.fillText("0", 200, 80);
   ctx.fillText("1", 340, 80);
 }
 
 //---- Bucle principal de la animación
-function animacion() {
+function animacion()
+{
 
   //-- Actualizar las posiciones de los objetos móviles
 
@@ -53,26 +57,26 @@ function animacion() {
   raqI.update();
   raqD.update();
 
-  //////////// COMENTADO PARA QUE CUANDO DE EN LA PARED DE LA DERECHA NO REBOTE
-  /////////// SI NO QUE SE VAYA LA BOLA COMO SI HUBIERAS METIDO GOL
+
   //-- Comprobar si la bola ha alcanzado el límite derecho
   //-- Si es así, se cambia de signo la velocidad, para
   // que "rebote" y vaya en el sentido opuesto
   if (bola.x >= canvas.width) {
     //-- Hay colisión. Cambiar el signo de la bola
     bola.vx = bola.vx * -1;
+    //-- Reproducir sonido
+    sonido_rebote.currentTime = 0;
+    sonido_rebote.play();
   }
 
   //-- Comprobar si hay colisión con la raqueta izquierda
   if (bola.x >= raqI.x && bola.x <=(raqI.x + raqI.width) &&
       bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)) {
     bola.vx = bola.vx * -1;
-  }
 
-  //-- Comprobar si hay colisión con la raqueta derecha
-  if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
-      bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
-    bola.vx = bola.vx * -1;
+    //-- Reproducir sonido
+    sonido_raqueta.currentTime = 0;
+    sonido_raqueta.play();
   }
 
   //-- Actualizar coordenada x de la bola, en funcion de
@@ -86,15 +90,14 @@ function animacion() {
   draw();
 }
 
-
-//-- Inicializa la bola: A su posicion inicial
+//-- Inicializa la bola: Llevarla a su posicion inicial
 const bola = new Bola(ctx);
 
-//--Crear las raquetas
+//-- Crear las raquetas
 const raqI = new raqueta(ctx);
 const raqD = new raqueta(ctx);
 
-//--Cambiar las coordenadas de la raqueta derecha
+//-- Cambiar las coordenadas de la raqueta derecha
 raqD.x_ini = 540;
 raqD.y_ini = 300;
 raqD.init();
@@ -121,6 +124,11 @@ window.onkeydown = (e) => {
       raqD.v = raqD.v_ini;
       break;
     case " ":
+
+      //-- Reproducir sonido
+      sonido_raqueta.currentTime = 0;
+      sonido_raqueta.play();
+
       //-- Llevar bola a su posicion incicial
       bola.init();
 
@@ -136,7 +144,8 @@ window.onkeyup = (e) => {
     //-- Quitar velocidad de la raqueta
     raqI.v = 0;
   }
-  if (e.key == "p" || e.key == "l"){
+
+  if (e.key == "p" || e.key == "l") {
     raqD.v = 0;
   }
 }
