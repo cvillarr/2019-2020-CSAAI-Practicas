@@ -1,0 +1,16 @@
+/* Fondo de la página */
+body {
+    background-color: #FDFD96;
+}
+
+/* Estilo para el canvas: Negro */
+#canvas {
+  background-color: black;
+}
+
+p {
+  color: green;
+  font-size: 18px;
+  font-family: "Gill Sans", sans-serif;
+  font-style: italic;
+}
