@@ -104,7 +104,7 @@ function animacion()
   if (bola.x >= canvas.width) {
     estado = ESTADO.SAQUE;
     bola.init();
-    conloge.log("GOL J1!!");
+    console.log("GOL J1!!");
     marcador_J1++;
 
     //-- Reproducir sonido
@@ -127,7 +127,7 @@ function animacion()
      return;
   }
 
-  //-- Comprobar si la bola ha alcanzado el limite de arriba
+  //-- Comprobar si la bola ha chocado arriba
   //-- Si es así, se cambia de signo la velocidad para que choque y
   //-- vaya en sentido contrario
 
@@ -136,7 +136,7 @@ function animacion()
     bola.vy = bola.vy * -1;
   }
 
-  //-- Comprobar si la bola ha alcanzado el limite de abajo
+  //-- Comprobar si la bola ha chocado abajo
   //-- Si es así, se cambia de signo la velocidad para que choque y
   //-- vaya en sentido contrario
   if (bola.y <= 0) {
@@ -212,7 +212,7 @@ window.onkeydown = (e) => {
     case "q":
       raqI.v = raqI.v_ini * -1;
       break;
-    case "p":
+    case "o":
       raqD.v = raqD.v_ini * -1;
       break;
     case "l":
@@ -247,7 +247,7 @@ window.onkeyup = (e) => {
     raqI.v = 0;
   }
 
-  if (e.key == "p" || e.key == "l") {
+  if (e.key == "o" || e.key == "l") {
     raqD.v = 0;
   }
 }
@@ -270,3 +270,5 @@ stop.onclick = () => {
   bola.init();
   start.disabled = false;
 }
+
+console.log(estado);
