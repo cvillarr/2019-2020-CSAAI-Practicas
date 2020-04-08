@@ -20,13 +20,17 @@ const ESTADO = {
   INIT: 0,
   SAQUE: 1,
   JUGANDO: 2,
+  FIN: 3,
 }
 
 //-- Variable de estado
 //-- Arrancamos desde el estado inicial
 let estado = ESTADO.INIT;
 let marcador_J1 = 0;
-let matcador_J2 = 0;
+let marcador_J2 = 0;
+let jugador1 = "JUGADOR 1";
+let jugador2 = "JUGADOR 2";
+let ganador = "";
 
 
 //-- Pintar todos los objetos en el canvas
@@ -61,7 +65,9 @@ function draw() {
   //------ Dibujar el tanteo
   ctx.font = "100px comic";
   ctx.fillStyle = "#FDFD96";
+  ctx.fillText("J1", 10, 80);
   ctx.fillText(marcador_J1, 200, 80);
+  ctx.fillText("J2", 500, 80);
   ctx.fillText(marcador_J2, 340, 80);
 
   //-- Dibujar el texto de sacar
@@ -78,7 +84,15 @@ function draw() {
     ctx.fillText("Pulsa Start!", 30, 350);
   }
 
+  if (estado == ESTADO.FIN) {
+    ctx.font = "30px comic";
+    ctx.fillStyle = "yellow";
+    ctx.fillText("GANA " + ganador + "!!! ENHORABUENA!!", 30, 200);
+    //ctx.fillText(ganador, 30, 350);
+  }
+
 }
+
 
 //---- Bucle principal de la animación
 function animacion()
@@ -129,13 +143,15 @@ function animacion()
 
   //-- Quien llegue a 11 gana
   if (marcador_J1 == 11) {
-    estado = ESTADO.INIT;
+    ganador = jugador1;
+    estado = ESTADO.FIN;
     bola.init();
     console.log("GANA JUGADOR 1!!! ENHORABUENA!!");
   }
 
   if (marcador_J2 == 11) {
-    estado = ESTADO.INIT;
+    ganador = jugador2;
+    estado = ESTADO.FIN;
     bola.init();
     console.log("GANA JUGADOR 2!!! ENHORABUENA!!");
   }
@@ -161,25 +177,43 @@ function animacion()
   if (bola.y <= 0) {
     //-- Hay colisión. Cambiar el signo de la bola
     bola.vy = bola.vy * -1;
+
+    //-- Reproducir sonido de sonido_rebote
+    sonido_rebote.currentTime = 0;
+    sonito_rebote.play();
+    return;
  }
 
  /////----- COLISIONES CON RAQUETAS -----/////
 
-  //-- Comprobar si hay colisión con la raqueta izquierda
+  //-- Comprobar si hay colisión con la raqueta izquierda y la velocidad
+  //-- dependiendo si la raqueta está parada o no
   if (bola.x >= raqI.x && bola.x <=(raqI.x + raqI.width) &&
       bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)) {
-          bola.vx = bola.vx * -1;
-
+          if (raqI.v == 0){
+            bola.vx = bola.vx * -1;
+          }
+          else{
+             bola.vx = bola.vx * -1;
+             bola.vy = raqI.v;
+          }
     //-- Reproducir sonido
     sonido_raqueta.currentTime = 0;
     sonido_raqueta.play();
   }
 
-  //-- Comprobar si hay colisión con la raqueta derecha
+  //-- Comprobar si hay colisión con la raqueta derecha y la Velocidad
+  //-- dependiendo si la raqueta está parada o no
 
   if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
       bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
-          bola.vx = bola.vx * -1;
+          if (raqI.v == 0){
+            bola.vx = bola.vx * -1;
+          }
+          else{
+            bola.vx = bola.vx * -1;
+             bola.vy = raqI.v;
+          }
 
     //-- Reproducir sonido
     sonido_raqueta.currentTime = 0;
