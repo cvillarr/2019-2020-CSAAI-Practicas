@@ -33,8 +33,20 @@ class raqueta
 
   //-- Actualizar la posición de la raqueta
   update()
-  {
-    this.y += this.v;
+  { // -- límite de raqueta arriba
+    if (this.y >= 1) {
+      this.y += this.v;
+    }
+    else {
+      this.y = 0;
+    }
+  // -- límite de raqueta abajo
+    if (this.y <= 360) {
+      this.y += this.v;
+    }
+    else {
+      this.y = 360;
+    }
   }
 
   //-- Dibujar la raqueta
