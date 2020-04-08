@@ -108,8 +108,8 @@ function animacion()
     marcador_J1++;
 
     //-- Reproducir sonido
-    sonido_rebote.currentTime = 0;
-    sonido_rebote.play();
+    sonido_tanto.currentTime = 0;
+    sonido_tanto.play();
     return;
   }
 
@@ -121,11 +121,25 @@ function animacion()
      console.log("GOL J2!!");
      marcador_J2++;
 
-     //-- Reproducir sonido
-     sonido_rebote.currentTime = 0;
-     sonido_rebote.play();
+     //-- Reproducir sonido de gol
+     sonido_tanto.currentTime = 0;
+     sonido_tanto.play();
      return;
   }
+
+  //-- Quien llegue a 11 gana
+  if (marcador_J1 == 11) {
+    estado = ESTADO.INIT;
+    bola.init();
+    console.log("GANA JUGADOR 1!!! ENHORABUENA!!");
+  }
+
+  if (marcador_J2 == 11) {
+    estado = ESTADO.INIT;
+    bola.init();
+    console.log("GANA JUGADOR 2!!! ENHORABUENA!!");
+  }
+
 
   //-- Comprobar si la bola ha chocado arriba
   //-- Si es así, se cambia de signo la velocidad para que choque y
@@ -134,6 +148,11 @@ function animacion()
   if (bola.y >= canvas.height) {
     //-- Hay colisión. Cambiar el signo de la bola
     bola.vy = bola.vy * -1;
+
+    //-- Reproducir sonido de sonido_rebote
+    sonido_rebote.currentTime = 0;
+    sonito_rebote.play();
+    return;
   }
 
   //-- Comprobar si la bola ha chocado abajo
