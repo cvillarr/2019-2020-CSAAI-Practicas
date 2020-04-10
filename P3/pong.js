@@ -113,7 +113,7 @@ function animacion()
 
   ////----- COLISIONES CON PAREDES ------//////
 
-  //-- Comprobar si la bola ha alcanzado el límite derecho
+  //-- Comprobar si la bola ha alcanzado la porteria derecha
   //-- Si es así, punto para J1 y volvemos a ESTADO.SAQUE
   if (bola.x >= canvas.width) {
     estado = ESTADO.SAQUE;
@@ -127,7 +127,7 @@ function animacion()
     return;
   }
 
-  //-- Comprobar si la bola ha alcanzado el limite izquierdo
+  //-- Comprobar si la bola ha alcanzado la porteria izquierda
   //-- Si es así, punto para J2 y volvermos a ESTADO.SAQUE
   if (bola.x <= 0) {
      estado = ESTADO.SAQUE;
@@ -157,7 +157,7 @@ function animacion()
   }
 
 
-  //-- Comprobar si la bola ha chocado arriba
+  //-- Comprobar si la bola ha chocado abajo
   //-- Si es así, se cambia de signo la velocidad para que choque y
   //-- vaya en sentido contrario
 
@@ -167,11 +167,11 @@ function animacion()
 
     //-- Reproducir sonido de sonido_rebote
     sonido_rebote.currentTime = 0;
-    sonito_rebote.play();
-    return;
+    sonido_rebote.play();
+
   }
 
-  //-- Comprobar si la bola ha chocado abajo
+  //-- Comprobar si la bola ha chocado arriba
   //-- Si es así, se cambia de signo la velocidad para que choque y
   //-- vaya en sentido contrario
   if (bola.y <= 0) {
@@ -180,8 +180,8 @@ function animacion()
 
     //-- Reproducir sonido de sonido_rebote
     sonido_rebote.currentTime = 0;
-    sonito_rebote.play();
-    return;
+    sonido_rebote.play();
+
  }
 
  /////----- COLISIONES CON RAQUETAS -----/////
@@ -190,10 +190,10 @@ function animacion()
   //-- dependiendo si la raqueta está parada o no
   if (bola.x >= raqI.x && bola.x <=(raqI.x + raqI.width) &&
       bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)) {
-          if (raqI.v == 0){
+          if (raqI.v == 0){ //--velocidad de la raqueta = 0
             bola.vx = bola.vx * -1;
           }
-          else{
+          else{ //-- movimiento de raqueta
              bola.vx = bola.vx * -1;
              bola.vy = raqI.v;
           }
@@ -207,12 +207,12 @@ function animacion()
 
   if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
       bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
-          if (raqI.v == 0){
+          if (raqD.v == 0){ //-- velocidad de la raqueta = 0
             bola.vx = bola.vx * -1;
           }
-          else{
+          else{ //-- movimiento de raqueta
             bola.vx = bola.vx * -1;
-             bola.vy = raqI.v;
+             bola.vy = raqD.v;
           }
 
     //-- Reproducir sonido
