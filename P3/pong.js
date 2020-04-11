@@ -22,8 +22,9 @@ const ESTADO = {
   SAQUE: 1,
   JUGANDO: 2,
   FIN: 3,
-}
+};
 
+//-- VARIABLES
 //-- Variable de estado
 //-- Arrancamos desde el estado inicial
 let estado = ESTADO.INIT;
@@ -41,7 +42,7 @@ function draw() {
   //-- Solo en el estado de jugando
   if (estado == ESTADO.JUGANDO){
     bola.draw();
-  }
+  };
 
   //-- Dibujar las raquetas
   raqI.draw();
@@ -76,23 +77,21 @@ function draw() {
     ctx.font = "30px monospace";
     ctx.fillStyle = '#FDFD96';
     ctx.fillText("Saca!", 30, 350);
-  }
+  };
 
   //-- Dibujar el texto de comenzar
   if (estado == ESTADO.INIT) {
     ctx.font = "30px monospace";
     ctx.fillStyle = '#FDFD96';
     ctx.fillText("Pulsa Start!", 30, 350);
-  }
+  };
 
   if (estado == ESTADO.FIN) {
     ctx.font = "30px monospace";
     ctx.fillStyle = '#FF1493';
     ctx.fillText("GANA " + ganador + "!!! ENHORABUENA!!", 30, 200);
-    //ctx.fillText(ganador, 30, 350);
-  }
-
-}
+  };
+};
 
 
 //---- Bucle principal de la animación
@@ -110,7 +109,7 @@ function animacion()
     marcador_J2 = 0;
     raqI.init();
     raqD.init();
-  }
+  };
 
   ////----- COLISIONES CON PAREDES ------//////
 
@@ -119,6 +118,8 @@ function animacion()
   if (bola.x >= canvas.width) {
     estado = ESTADO.SAQUE;
     bola.init();
+    bola.x_ini = 500;
+    bola.y_ini = 200;
     console.log("GOL J1!!");
     marcador_J1++;
 
@@ -126,21 +127,26 @@ function animacion()
     sonido_tanto.currentTime = 0;
     sonido_tanto.play();
     return;
-  }
+  };
+
 
   //-- Comprobar si la bola ha alcanzado la porteria izquierda
   //-- Si es así, punto para J2 y volvermos a ESTADO.SAQUE
   if (bola.x <= 0) {
      estado = ESTADO.SAQUE;
      bola.init();
+     bola.x_ini = 100;
+     bola.y_ini = 200;
      console.log("GOL J2!!");
      marcador_J2++;
+
 
      //-- Reproducir sonido de gol
      sonido_tanto.currentTime = 0;
      sonido_tanto.play();
      return;
-  }
+  };
+
 
   //-- Quien llegue a 11 gana
   if (marcador_J1 == 11) {
@@ -148,14 +154,14 @@ function animacion()
     estado = ESTADO.FIN;
     bola.init();
     console.log("GANA JUGADOR 1!!! ENHORABUENA!!");
-  }
+  };
 
   if (marcador_J2 == 11) {
     ganador = jugador2;
     estado = ESTADO.FIN;
     bola.init();
     console.log("GANA JUGADOR 2!!! ENHORABUENA!!");
-  }
+  };
 
 
   //-- Comprobar si la bola ha chocado abajo
@@ -170,7 +176,7 @@ function animacion()
     sonido_rebote.currentTime = 0;
     sonido_rebote.play();
 
-  }
+  };
 
   //-- Comprobar si la bola ha chocado arriba
   //-- Si es así, se cambia de signo la velocidad para que choque y
@@ -183,7 +189,7 @@ function animacion()
     sonido_rebote.currentTime = 0;
     sonido_rebote.play();
 
- }
+ };
 
  /////----- COLISIONES CON RAQUETAS -----/////
 
@@ -197,11 +203,11 @@ function animacion()
           else{ //-- movimiento de raqueta
              bola.vx = bola.vx * -1;
              bola.vy = raqI.v;
-          }
+          };
     //-- Reproducir sonido
     sonido_raqueta.currentTime = 0;
     sonido_raqueta.play();
-  }
+  };
 
   //-- Comprobar si hay colisión con la raqueta derecha y la Velocidad
   //-- dependiendo si la raqueta está parada o no
@@ -214,12 +220,12 @@ function animacion()
           else{ //-- movimiento de raqueta
             bola.vx = bola.vx * -1;
              bola.vy = raqD.v;
-          }
+          };
 
     //-- Reproducir sonido
     sonido_raqueta.currentTime = 0;
     sonido_raqueta.play();
-  }
+  };
 
 
 
@@ -233,7 +239,7 @@ function animacion()
   //-- Dibujar el nuevo frame
   draw();
 
-}
+};
 
 //-- Inicializa la bola: Llevarla a su posicion inicial
 const bola = new Bola(ctx);
