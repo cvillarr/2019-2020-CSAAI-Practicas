@@ -15,6 +15,7 @@ const sonido_raqueta = new Audio("pong-raqueta.mp3");
 const sonido_rebote = new Audio("pong-rebote.mp3");
 const sonido_tanto = new Audio("pong-tanto.mp3");
 
+
 //-- Estados del juego
 const ESTADO = {
   INIT: 0,
@@ -52,7 +53,7 @@ function draw() {
   //-- Estilo de la linea: discontinua
   //-- Trazos de 10 pixeles, y 10 de separacion
   ctx.setLineDash([10, 10]);
-  ctx.strokeStyle = 'blue';
+  ctx.strokeStyle = '#00FFFF';
   ctx.lineWidth = 4;
   //-- Punto superior de la linea. Su coordenada x está en la mitad
   //-- del canvas
@@ -63,7 +64,7 @@ function draw() {
   ctx.stroke();
 
   //------ Dibujar el tanteo
-  ctx.font = "100px comic";
+  ctx.font = "80px monospace";
   ctx.fillStyle = "#FDFD96";
   ctx.fillText("J1", 10, 80);
   ctx.fillText(marcador_J1, 200, 80);
@@ -72,21 +73,21 @@ function draw() {
 
   //-- Dibujar el texto de sacar
   if (estado == ESTADO.SAQUE) {
-    ctx.font = "40px comic";
-    ctx.fillStyle = "yellow";
+    ctx.font = "30px monospace";
+    ctx.fillStyle = '#FDFD96';
     ctx.fillText("Saca!", 30, 350);
   }
 
   //-- Dibujar el texto de comenzar
   if (estado == ESTADO.INIT) {
-    ctx.font = "40px comic";
-    ctx.fillStyle = "green";
+    ctx.font = "30px monospace";
+    ctx.fillStyle = '#FDFD96';
     ctx.fillText("Pulsa Start!", 30, 350);
   }
 
   if (estado == ESTADO.FIN) {
-    ctx.font = "30px comic";
-    ctx.fillStyle = "yellow";
+    ctx.font = "30px monospace";
+    ctx.fillStyle = '#FF1493';
     ctx.fillText("GANA " + ganador + "!!! ENHORABUENA!!", 30, 200);
     //ctx.fillText(ganador, 30, 350);
   }

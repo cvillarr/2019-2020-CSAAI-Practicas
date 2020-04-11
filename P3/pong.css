@@ -3,14 +3,41 @@ body {
     background-color: #FDFD96;
 }
 
+h1 {
+  color: #FF1493;
+  font-size: 45px;
+  font-family: monospace;
+  text-align: center;
+  line-height: 10px;
+}
 /* Estilo para el canvas: Negro */
 #canvas {
   background-color: black;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: 10px solid #00FFFF;
 }
 
+button {
+  background-color: #00FFFF;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 350px;
+  margin-right: 100px;
+  color: #FF1493;
+}
+
+
 p {
-  color: green;
-  font-size: 18px;
-  font-family: "Gill Sans", sans-serif;
-  font-style: italic;
+  color: #FF1493;
+  font-size: 14px;
+  font-family: monospace;
+  text-align: center;
+  line-height: 5px;
 }
