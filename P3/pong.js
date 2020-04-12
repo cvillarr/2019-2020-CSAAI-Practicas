@@ -91,6 +91,7 @@ function draw() {
     ctx.fillStyle = '#FF1493';
     ctx.fillText("GANA " + ganador + "!!! ENHORABUENA!!", 30, 200);
   };
+  
 };
 
 
