@@ -91,7 +91,7 @@ function draw() {
     ctx.fillStyle = '#FF1493';
     ctx.fillText("GANA " + ganador + "!!! ENHORABUENA!!", 30, 200);
   };
-  
+
 };
 
 
@@ -220,7 +220,7 @@ function animacion()
           }
           else{ //-- movimiento de raqueta
             bola.vx = bola.vx * -1;
-             bola.vy = raqD.v;
+            bola.vy = raqD.v;
           };
 
     //-- Reproducir sonido
