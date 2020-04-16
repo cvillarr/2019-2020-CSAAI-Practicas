@@ -28,54 +28,62 @@ video3.poster = "https://github.com/myTeachingURJC/2019-2020-CSAAI/raw/master/L1
 video4.poster = "https://github.com/myTeachingURJC/2019-2020-CSAAI/raw/master/L10/test.png";
 
 //-- Obtener los botones
+const empezamos = document.getElementById("conectar cámaras");
 const play1 = document.getElementById("play1");
-const stop1 = document.getElementById("stop1");
 const play2 = document.getElementById("play2");
-const stop2 = document.getElementById("stop2");
 const play3 = document.getElementById("play3");
-const stop3 = document.getElementById("stop3");
+
+empezamos.onclick = () => {
+  console.log("EMPEZAMOS");
+  video1.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
+  video1.play();
+  video2.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
+  video2.play();
+  video3.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
+  video3.play();
+};
 
 
 //-- Función de retrollamada del botón de ver
 play1.onclick = () => {
-  console.log("Click!");
+  console.log("VER VIDEO 1!");
   video4.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4"
-  video1.play();
+  video4.play();
 };
 
 //-- Funcion de retrollamada del boton de parar
-stop1.onclick = () => {
-  video1.pause();
+//stop1.onclick = () => {
+  //video1.pause();
 
   //-- Quitar la fuente de video, para que se muestre la
   //-- imagen definida en el atributo poster
-  video1.src = null;
-}
+  //video1.src = null;
+//}
 
 play2.onclick = () => {
-  console.log("Click!");
+  console.log("VER VIDEO 2!");
   video4.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4"
-  video2.play();
+  video4.play();
 };
 
-stop2.onclick = () => {
-  video2.pause();
+//stop2.onclick = () => {
+  //video2.pause();
 
   //-- Quitar la fuente de video, para que se muestre la
   //-- imagen definida en el atributo poster
-  video2.src = null;
-}
+  //video2.src = null;
+//}
 
 play3.onclick = () => {
-  console.log("Click!");
+  console.log("VER VIDEO 3!");
   video4.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4"
-  video3.play();
+  video4.play();
 };
 
-stop3.onclick = () => {
-  video3.pause();
+//stop3.onclick = () => {
+  //video3.pause();
 
   //-- Quitar la fuente de video, para que se muestre la
   //-- imagen definida en el atributo poster
-  video3.src = null;
-}
+  //video3.src = null;
+//}
