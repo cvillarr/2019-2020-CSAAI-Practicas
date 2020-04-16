@@ -1,0 +1,31 @@
+body {
+  background: blue
+}
+
+p {
+  text-align: center;
+  font-size: 45px;
+  font-family: monospace;
+}
+
+video1 {
+  margin-left: 200;
+  margin-right: 200;
+}
+
+video2 {
+  margin-left: 20;
+  margin-right: 20;
+  align-items: center;
+}
+
+video3 {
+  margin-left: 20;
+  margin-right: 20;
+  align-items: center;
+}
+
+video4 {
+  margin-top: 100;
+  margin-left: 230;
+}
