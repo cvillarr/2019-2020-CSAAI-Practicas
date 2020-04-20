@@ -28,7 +28,7 @@ video3.poster = "https://github.com/myTeachingURJC/2019-2020-CSAAI/raw/master/L1
 video4.poster = "https://github.com/myTeachingURJC/2019-2020-CSAAI/raw/master/L10/test.png";
 
 //-- Obtener los botones
-const empezamos = document.getElementById("conectar cámaras");
+const empezamos = document.getElementById("conectar camaras");
 const play1 = document.getElementById("play1");
 const play2 = document.getElementById("play2");
 const play3 = document.getElementById("play3");
