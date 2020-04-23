@@ -2,21 +2,34 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Filtro 5</title>
+    <title> Filtro </title>
     <link rel="stylesheet" href="filtro.css">
     <script src="filtro.js" defer></script>
   </head>
   <body>
-    <canvas id="canvas"></canvas>
-    <img src="FPGA.jpg" id="imagesrc">
+
+    <h1> IMAGEN ORIGINAL </h1>
+      <div class = "imagen1">
+      <img src = "colores.jpg" id = "imagesrc">
+
+    <h1> IMAGEN FILTRADA </h1>
+      <canvas id = "canvas"></canvas>
+      
+    <br>
     <p>Establece el umbral de rojo:</p>
-    <input type="range" id="deslizadorR" min="0" max="255" value="255"/>
-    <p id="range_valueR">00</p>
+    <input type = "range" id = "deslizadorR" min = "0" max = "255" value = "255"/>
+    <p id = "range_valueR">00</p>
     <p>Establece el umbral de verde:</p>
-    <input type="range" id="deslizadorG" min="0" max="255" value="255"/>
-    <p id="range_valueG">00</p>
+    <input type = "range" id = "deslizadorG" min = "0" max = "255" value = "255"/>
+    <p id = "range_valueG">00</p>
     <p>Establece el umbral de azul:</p>
-    <input type="range" id="deslizadorB" min="0" max="255" value="255"/>
-    <p id="range_valueB">00</p>
+    <input type = "range" id = "deslizadorB" min = "0" max = "255" value = "255"/>
+    <p id = "range_valueB">00</p>
+    <br>
+    <button type = "grises" id= "grises">grises</button>
+    <br>
+    <button type = "original" id = "original">original</button>
+
+    </div>
   </body>
 </html>

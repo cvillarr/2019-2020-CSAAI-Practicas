@@ -1,5 +1,5 @@
 body {
-  background: blue
+  background: 
 }
 
 p {
@@ -8,9 +8,15 @@ p {
   font-family: monospace;
 }
 
-video1 {
-  margin-left: 200;
-  margin-right: 200;
+button{
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #FF1493;
+  background-color: ;
+  border-radius: 6px;
+  border: 2px solid #0016b0;
 }
 
 video2 {
@@ -26,6 +32,6 @@ video3 {
 }
 
 video4 {
-  margin-top: 100;
+  margin-top: 300;
   margin-left: 230;
 }

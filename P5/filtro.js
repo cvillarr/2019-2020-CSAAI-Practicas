@@ -13,7 +13,10 @@ const deslizadorB = document.getElementById('deslizadorB');
 const range_valueR = document.getElementById('range_valueR');
 const range_valueG = document.getElementById('range_valueG');
 const range_valueB = document.getElementById('range_valueB');
+//-- Inicializamos el botón para la escala de botongrises
 
+const grises = document.getElementById('grises');
+const original = document.getElementById('original');
 
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
@@ -66,23 +69,54 @@ function filtroRGB() {
         if (data[i+2] > umbralB)
           data[i+2] = umbralB;
       }
+      //--Poner la imagen modificada en el canvas
+      ctx.putImageData(imgData, 0, 0);
 };
 
 //--Funcion de retrollamada deslizadorR
 deslizadorR.oninput = () => {
   filtroRGB();
-  ctx.drawImage(img, 0, 0);
-
 }
 //--Funcion de retrollamada deslizadorG
 deslizadorG.oninput = () => {
   filtroRGB();
-  ctx.drawImage(img, 0, 0);
 }
 //--Funcion de retrollamada deslizadorB
 deslizadorB.oninput = () => {
   filtroRGB();
-  ctx.drawImage(img, 0, 0);
 }
+
+grises.onclick = () => {
+  //-- Situar la imagen original en el canvas
+  //-- No se han hecho manipulaciones todavia
+  ctx.drawImage(img, 0,0);
+
+  //-- Obtener la imagen del canvas en pixeles
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+  //-- Obtener el array con todos los píxeles
+  let data = imgData.data;
+
+  //-- Filtrar la imagen según el nuevo umbral
+  for (var i = 0; i < data.length; i+=4){
+      R = data[i];
+      G = data[i+1];
+      B = data[i+2];
+
+  let brillo = (3 * R + 4 * G + B)/8
+      data[i] = brillo;
+      data[i+1] = brillo;
+      data[i+2] = brillo;
+  }
+
+  ctx.putImageData(imgData, 0, 0);
+};
+
+original.onclick = () => {
+  ctx.drawImage(img, 0,0);
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let data = imgData.data;
+  ctx.putImageData(imgData, 0, 0);
+};
 
 console.log("Fin...");
