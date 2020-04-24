@@ -8,28 +8,25 @@
   </head>
   <body>
 
-    <h1> IMAGEN ORIGINAL </h1>
-      <div class = "imagen1">
-      <img src = "colores.jpg" id = "imagesrc">
+        <img src = "colores.jpg" id = "imagesrc">
+        <canvas id = "canvas"></canvas>
 
-    <h1> IMAGEN FILTRADA </h1>
-      <canvas id = "canvas"></canvas>
+      <br>
+      <button type = "grises" id= "grises">Grises</button>
+      <button type = "original" id = "original">Original</button>
 
-    <br>
-    <p>Establece el umbral de rojo:</p>
-    <input type = "range" id = "deslizadorR" min = "0" max = "255" value = "255"/>
-    <p id = "range_valueR">00</p>
-    <p>Establece el umbral de verde:</p>
-    <input type = "range" id = "deslizadorG" min = "0" max = "255" value = "255"/>
-    <p id = "range_valueG">00</p>
-    <p>Establece el umbral de azul:</p>
-    <input type = "range" id = "deslizadorB" min = "0" max = "255" value = "255"/>
-    <p id = "range_valueB">00</p>
-    <br>
-    <button type = "grises" id= "grises">grises</button>
-    <br>
-    <button type = "original" id = "original">original</button>
+      <br>
+      <p id = "rojo"> Establece el umbral de rojo:</p>
+      <input type = "range" id = "deslizadorR" min = "0" max = "255" value = "255"/>
+      <p id = "range_valueR">00</p>
+      <p id = "verde"> Establece el umbral de verde:</p>
+      <input type = "range" id = "deslizadorG" min = "0" max = "255" value = "255"/>
+      <p id = "range_valueG">00</p>
+      <p id = "azul">Establece el umbral de azul:</p>
+      <input type = "range" id = "deslizadorB" min = "0" max = "255" value = "255"/>
+      <p id = "range_valueB">00</p>
 
-    </div>
+
+
   </body>
 </html>

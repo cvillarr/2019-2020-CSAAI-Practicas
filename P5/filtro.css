@@ -2,8 +2,6 @@ body {
   background-color: grey;
 }
 
-
-
 #imagesrc {
   float:left;
   height: 300px;
@@ -16,7 +14,73 @@ body {
   width: 600px;
 }
 
-p {
+
+#rojo{
+  color: red;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 0px;
+  font-size: 25px;
+}
+
+#range_valueR {
+  color: red;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 0px;
+}
+
+#deslizadorR {
+  margin-left: 465px;
+  width: 350px;
+}
+
+#verde{
+  color: green;
+  text-align: center;
+  margin-top: 0px;
+  font-size: 25px;
+}
+
+#range_valueG{
+  color: green;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 0px;
+}
+
+#deslizadorG {
+  margin-left: 465px;
+  width: 350px;
+  font-size: 25px;
+  color: green;
+}
+
+#azul {
+  color: blue;
+  text-align: center;
+  margin-top: 0px;
+  font-size: 25px;
+}
+
+#range_valueB{
+  color: blue;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 0px;
+}
+
+#deslizadorB {
+  margin-left: 465px;
+  width: 350px;
+}
+
+
+button {
+  margin-top: 0px;
+  width: 60px;
+  height: 40px;
+  border: solid;
+  border-color: #00FFFF;
+  background-color: blue;
+  color: yellow;
 }
