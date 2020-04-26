@@ -1,37 +1,58 @@
 body {
-  background: 
+  background: url("realizacion.jpeg");
 }
 
 p {
   text-align: center;
+  text-decoration: underline;
   font-size: 45px;
   font-family: monospace;
+  color: white;
 }
 
 button{
-  text-decoration: none;
   padding: 10px;
   font-weight: 600;
   font-size: 20px;
+  font-family: monospace;
   color: #FF1493;
-  background-color: ;
   border-radius: 6px;
   border: 2px solid #0016b0;
 }
 
-video2 {
+#iniciar {
+  margin-left: 600px;
+}
+
+#video1 {
+  margin-left: 200px;
+  margin-top: 20px;
+}
+
+#play1 {
+  margin-left: 280px;
+}
+
+#video2 {
+  margin-left: 20;
+  margin-right: 20;
+}
+
+#play2 {
+  margin-left: 150px;
+}
+
+#video3 {
   margin-left: 20;
   margin-right: 20;
   align-items: center;
 }
 
-video3 {
-  margin-left: 20;
-  margin-right: 20;
-  align-items: center;
+#play3 {
+  margin-left: 140px;
 }
 
-video4 {
-  margin-top: 300;
-  margin-left: 230;
+#video4 {
+  margin-top: 50px;
+  margin-left: 250px;
 }

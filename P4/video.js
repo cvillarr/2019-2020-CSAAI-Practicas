@@ -2,18 +2,18 @@ console.log("Ejecutando JS...");
 
 //----- Obtener elemento de video y configurarlo
 const video1 = document.getElementById("video1")
-video1.width = 200;  //-- Tamaño de la pantalla de video
-video1.height = 100;
+video1.width = 300;  //-- Tamaño de la pantalla de video
+video1.height = 150;
 video1.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4"
 
 const video2 = document.getElementById("video2")
-video2.width = 200;
-video2.height = 100;
+video2.width = 300;
+video2.height = 150;
 video2.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
 
 const video3 = document.getElementById("video3")
-video3.width = 200;
-video3.height = 100;
+video3.width = 300;
+video3.height = 150;
 video3.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
 
 const video4 = document.getElementById("video4")
