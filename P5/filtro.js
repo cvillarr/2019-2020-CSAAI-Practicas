@@ -17,6 +17,7 @@ const range_valueB = document.getElementById('range_valueB');
 
 const grises = document.getElementById('grises');
 const original = document.getElementById('original');
+const rotacion = document.getElementById('rotacion');
 
 
 //-- Función de retrollamada de imagen cargada
@@ -87,6 +88,7 @@ deslizadorB.oninput = () => {
   filtroRGB();
 }
 
+//-- Filtro escala de grises
 grises.onclick = () => {
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
@@ -112,7 +114,22 @@ grises.onclick = () => {
 
   ctx.putImageData(imgData, 0, 0);
 };
+//--Rotar la imagen, la parte de abajo arriba y viceversa
+function rotar(){
+  ctx.drawImage(img, 0,0);
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let data = imgData.data;
 
+  ctx.translate(img.width-1, img.height-1);
+  ctx.rotate(Math.PI);
+  ctx.putImageData(imgData, 0, 0);
+};
+
+rotacion.onclick = () => {
+    rotar();
+};
+
+//-- Recuperar la imagen original
 original.onclick = () => {
   ctx.drawImage(img, 0,0);
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
