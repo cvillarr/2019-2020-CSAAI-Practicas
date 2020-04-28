@@ -121,6 +121,8 @@ function animacion()
     bola.init();
     bola.x_ini = 500;
     bola.y_ini = 200;
+    bola.vx_ini = -(Math.random() * ((5-1) + 1));
+    bola.vy_ini = -(Math.random() * ((5-1) + 1));
     console.log("GOL J1!!");
     marcador_J1++;
 
@@ -138,6 +140,8 @@ function animacion()
      bola.init();
      bola.x_ini = 100;
      bola.y_ini = 200;
+     bola.vx_ini = (Math.random() * ((5-1) + 1));
+     bola.vy_ini = (Math.random() * ((5-1) + 1));
      console.log("GOL J2!!");
      marcador_J2++;
 

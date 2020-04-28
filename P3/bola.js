@@ -15,8 +15,8 @@ class Bola {
     this.y = 0;
 
     //-- Velocidad inicial de la bola
-    this.vx_ini = 6;
-    this.vy_ini = 3;
+    this.vx_ini = Math.random() * (5-1) + 1;
+    this.vy_ini = Math.random() * (4-1) + 1;
 
     //-- Velocidad genérica de la bola
     //-- Inicialmente a cero
@@ -32,7 +32,7 @@ class Bola {
     this.ctx.beginPath();
     this.ctx.fillStyle='#FF1493';
 
-    //-- x,y, anchura, altura
+    //-- x,y, anchura, altura, angulo, antihorario
     this.ctx.rect(this.x, this.y, this.size, this.size, 2*Math.PI, false);
     this.ctx.fill();
   }
