@@ -153,15 +153,15 @@ function animacion()
   };
 
 
-  //-- Quien llegue a 11 gana
-  if (marcador_J1 == 11) {
+  //-- Quien llegue a 5 gana
+  if (marcador_J1 == 5) {
     ganador = jugador1;
     estado = ESTADO.FIN;
     bola.init();
     console.log("GANA JUGADOR 1!!! ENHORABUENA!!");
   };
 
-  if (marcador_J2 == 11) {
+  if (marcador_J2 == 5) {
     ganador = jugador2;
     estado = ESTADO.FIN;
     bola.init();
