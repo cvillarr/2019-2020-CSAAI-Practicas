@@ -49,6 +49,9 @@ play1.onclick = () => {
   console.log("VER VIDEO 1!");
   video4.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4"
   video4.currentTime = video1.currentTime;
+  video1.style.border = "solid #0016b0";
+  video2.style.border = "";
+  video3.style.border = "";
   video4.play();
 };
 
@@ -57,6 +60,9 @@ play2.onclick = () => {
   console.log("VER VIDEO 2!");
   video4.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4"
   video4.currentTime = video2.currentTime;
+  video1.style.border = "";
+  video2.style.border = "solid #0016b0";
+  video3.style.border = "";
   video4.play();
 };
 
@@ -65,5 +71,8 @@ play3.onclick = () => {
   console.log("VER VIDEO 3!");
   video4.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4"
   video4.currentTime = video1.currentTime;
+  video1.style.border = "";
+  video2.style.border = "";
+  video3.style.border = "solid #0016b0";
   video4.play();
 };

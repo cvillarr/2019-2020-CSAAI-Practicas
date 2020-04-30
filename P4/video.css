@@ -27,6 +27,8 @@ button{
 #video1 {
   margin-left: 200px;
   margin-top: 20px;
+  border-radius: 4px;
+  border: solid white;
 }
 
 #play1 {
@@ -36,6 +38,8 @@ button{
 #video2 {
   margin-left: 20;
   margin-right: 20;
+  border-radius: 4px;
+  border: solid white;
 }
 
 #play2 {
@@ -46,6 +50,8 @@ button{
   margin-left: 20;
   margin-right: 20;
   align-items: center;
+  border-radius: 4px;
+  border: solid white;
 }
 
 #play3 {
@@ -55,4 +61,6 @@ button{
 #video4 {
   margin-top: 50px;
   margin-left: 250px;
+  border-radius: 4px;
+  border: solid white;
 }
