@@ -18,6 +18,8 @@ const range_valueB = document.getElementById('range_valueB');
 const grises = document.getElementById('grises');
 const original = document.getElementById('original');
 const rotacion = document.getElementById('rotacion');
+const colores = document.getElementById('colores');
+
 
 
 //-- Función de retrollamada de imagen cargada
@@ -75,18 +77,21 @@ function filtroRGB() {
       ctx.putImageData(imgData, 0, 0);
 };
 
-//--Funcion de retrollamada deslizadorR
-deslizadorR.oninput = () => {
-  filtroRGB();
-}
-//--Funcion de retrollamada deslizadorG
-deslizadorG.oninput = () => {
-  filtroRGB();
-}
-//--Funcion de retrollamada deslizadorB
-deslizadorB.oninput = () => {
-  filtroRGB();
-}
+colores.onclick = () => {
+  //--Funcion de retrollamada deslizadorR
+  deslizadorR.oninput = () => {
+    filtroRGB();
+  }
+  //--Funcion de retrollamada deslizadorG
+  deslizadorG.oninput = () => {
+    filtroRGB();
+  }
+  //--Funcion de retrollamada deslizadorB
+  deslizadorB.oninput = () => {
+    filtroRGB();
+  }
+  console.log("colores");
+};
 
 //-- Filtro escala de grises
 grises.onclick = () => {
@@ -113,20 +118,22 @@ grises.onclick = () => {
   }
 
   ctx.putImageData(imgData, 0, 0);
+  console.log("gris");
 };
-//--Rotar la imagen, la parte de abajo arriba y viceversa
+//--Rotar la imagen, ponerla boca abajo
 function rotar(){
   ctx.drawImage(img, 0,0);
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   let data = imgData.data;
 
-  ctx.translate(img.width-1, img.height-1);
-  ctx.rotate(Math.PI);
+  ctx.translate(0,2*(img.height)/2);
+  ctx.scale(1, -1);
   ctx.putImageData(imgData, 0, 0);
 };
 
 rotacion.onclick = () => {
     rotar();
+    console.log("rotar");
 };
 
 //-- Recuperar la imagen original
@@ -135,6 +142,7 @@ original.onclick = () => {
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   let data = imgData.data;
   ctx.putImageData(imgData, 0, 0);
+  console.log("original");
 };
 
 
