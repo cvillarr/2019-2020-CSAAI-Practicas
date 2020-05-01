@@ -13,6 +13,7 @@ punto = document.getElementById("punto")
 botonAC = document.getElementById("botonAC")
 botonpa = document.getElementById("botonpa")
 botonpc = document.getElementById("botonpc")
+botondel =  document.getElementById("botondel")
 
 let numero = document.getElementsByClassName('numero')
 
@@ -70,4 +71,8 @@ botonpc.onclick = () => {
 
 botonAC.onclick = () => {
   resultado.innerHTML = " ";
+}
+
+botondel.onclick = () => {
+  resultado.innerHTML = resultado.innerHTML.slice(0,-1);
 }
