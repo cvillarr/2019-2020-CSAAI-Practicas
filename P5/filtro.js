@@ -90,7 +90,6 @@ colores.onclick = () => {
   deslizadorB.oninput = () => {
     filtroRGB();
   }
-  console.log("colores");
 };
 
 //-- Filtro escala de grises
@@ -118,7 +117,7 @@ grises.onclick = () => {
   }
 
   ctx.putImageData(imgData, 0, 0);
-  console.log("gris");
+
 };
 //--Rotar la imagen, ponerla boca abajo
 function rotar(){
@@ -133,7 +132,7 @@ function rotar(){
 
 rotacion.onclick = () => {
     rotar();
-    console.log("rotar");
+
 };
 
 //-- Recuperar la imagen original
@@ -142,7 +141,7 @@ original.onclick = () => {
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   let data = imgData.data;
   ctx.putImageData(imgData, 0, 0);
-  console.log("original");
+
 };
 
 
