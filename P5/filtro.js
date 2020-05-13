@@ -19,7 +19,7 @@ const grises = document.getElementById('grises');
 const original = document.getElementById('original');
 const rotacion = document.getElementById('rotacion');
 const colores = document.getElementById('colores');
-
+const negativo = document.getElementById('negativo');
 
 
 //-- Función de retrollamada de imagen cargada
@@ -94,6 +94,7 @@ colores.onclick = () => {
 
 //-- Filtro escala de grises
 grises.onclick = () => {
+
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
   ctx.drawImage(img, 0,0);
@@ -120,7 +121,7 @@ grises.onclick = () => {
 
 };
 //--Rotar la imagen, ponerla boca abajo
-function rotar(){
+rotacion.onclick = () => {
   ctx.drawImage(img, 0,0);
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   let data = imgData.data;
@@ -130,10 +131,6 @@ function rotar(){
   ctx.putImageData(imgData, 0, 0);
 };
 
-rotacion.onclick = () => {
-    rotar();
-
-};
 
 //-- Recuperar la imagen original
 original.onclick = () => {
@@ -142,6 +139,19 @@ original.onclick = () => {
   let data = imgData.data;
   ctx.putImageData(imgData, 0, 0);
 
+};
+
+negativo.onclick = () => {
+  ctx.drawImage(img, 0,0);
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let data = imgData.data;
+
+  for (var i = 0; i < data.length; i+=4){
+      data[i] = 255 - data[i];
+      data[i+1] = 255 - data[i+1];
+      data[i+2] = 255 - data[i+2];
+  }
+  ctx.putImageData(imgData, 0, 0);
 };
 
 
