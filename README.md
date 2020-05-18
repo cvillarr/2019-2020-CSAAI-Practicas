@@ -3,7 +3,7 @@ Mis prácticas de la asignatura Construcción de Servicios y Aplicaciones Audiov
 Curso 2019-2020  
 
 Todas las prácticas tienen como página principal .html. Acompañado de un archivo .js (excepto práctica del Currículum) y de una hoja de estilo .css.
-Todas las prácticas pueden ser vistas tanto en navegador de Google Chrome como en navegador de Firefox a excepción de la práctica 4 que en Firefox no funciona correctamente. 
+Todas las prácticas pueden ser vistas tanto en navegador de Google Chrome como en navegador de Firefox.
 
 PRÁCTICA 1: CURRÍCULUM
 
